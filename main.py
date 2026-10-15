@@ -63,12 +63,13 @@ while Jouer:
         elif choix == "2": # Combat
 
             while vie_joueur > 0:
-                if (vie_monstre - attaque_joueur) > 0:
+                
+                if (vie_monstre - attaque_joueur) > 0: #attaque joueur
                     vie_monstre -= attaque_joueur
                     print(f"\u001b[0;93m Vous attaquez le {nom_monstre}! Il lui reste {vie_monstre} pvs")
                     time.sleep(.5)
 
-                    if (vie_joueur - attaque_monstre) > 0:
+                    if (vie_joueur - attaque_monstre) > 0: #attaque monstre
                         vie_joueur -= attaque_monstre
                         print(f"\u001b[1;93m La créature vous attaque! Il vous reste {vie_joueur} pvs")
                         time.sleep(.5)
@@ -95,6 +96,7 @@ while Jouer:
 
     if vie_joueur > 0: # Victoire
         print("\u001b[1;36m FÉLICITATIONS! Vous avez réussis à vous rendre au bout de cette grotte!")
+    
     rejouer = input("\u001b[1;36m Voulez-vous recommencer? (1)-Oui, (2)-Non")
 
     if rejouer == "1": #Recommencer
